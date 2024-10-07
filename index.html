@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOT SC01 - RR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>BOT SC01 - RR</h1>
+
+        <!-- Tùy chọn section -->
+        <div class="settings-section">
+            <h2>Tùy chọn</h2>
+            <form>
+                <label><input type="checkbox" checked> Vào lệnh với tín hiệu quá mua quá bán</label><br>
+                <label><input type="checkbox" checked> Vào lệnh với tín hiệu phân kỳ</label><br>
+                <label><input type="checkbox" checked> Xét góc quá mua, quá bán</label><br>
+                <label><input type="checkbox" checked> Xét góc phân kỳ</label><br>
+
+                <label>Kiểm tra PK âm với RSI lớn hơn:</label>
+                <input type="range" min="0" max="100" value="60"><br>
+
+                <label>Kiểm tra PK dương với RSI nhỏ hơn:</label>
+                <input type="range" min="0" max="100" value="40"><br>
+
+                <label><input type="checkbox"> Nếu góc đang kiểm tra tạo lệnh không hợp lệ...</label><br>
+                <label><input type="checkbox"> Lấy góc gần nhất...</label><br>
+            </form>
+        </div>
+
+        <!-- Thông tin tài khoản section -->
+        <div class="account-section">
+            <h2>Thông tin tài khoản</h2>
+            <label>UID: <input type="text" placeholder="UID"></label><br>
+            <button>Đăng nhập</button>
+            <button>Chạy BOT</button>
+        </div>
+
+        <!-- Cài đặt cặp giao dịch -->
+        <div class="trade-settings-section">
+            <h2>Cài đặt cặp giao dịch</h2>
+            <form>
+                <label>Chọn COIN: <select>
+                        <option>BTC_USDT</option>
+                    </select></label><br>
+                <label>Biên độ dưới: <input type="text" value="0.2"></label><br>
+                <label>Biên độ trên: <input type="text" value="0.6"></label><br>
+                <label>Risk: <input type="text" value="4"></label><br>
+                <label>TP1: <input type="text" value="1"></label><br>
+                <label>TP2: <input type="text" value="0"></label><br>
+                <button>Thêm/Sửa</button>
+            </form>
+        </div>
+
+        <!-- Danh sách coin đang trade -->
+        <div class="trade-list-section">
+            <h2>Danh sách các coin đang trade</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phương pháp</th>
+                        <th>Symbol</th>
+                        <th>Biên độ dưới(%)</th>
+                        <th>Biên độ trên(%)</th>
+                        <th>Risk</th>
+                        <th>Loại Risk</th>
+                        <th>TP1</th>
+                        <th>TP2</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SC01 thường</td>
+                        <td>BTC_USDT</td>
+                        <td>0.2</td>
+                        <td>0.6</td>
+                        <td>4</td>
+                        <td>$</td>
+                        <td>1R</td>
+                        <td>0R</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
